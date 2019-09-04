@@ -3,9 +3,133 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dahunsi Akinleye's CV</title>
     <script src="https://kit.fontawesome.com/79825d6958.js"></script>
+    
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=email],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #696969;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #696969;
+        }
+
+        .contact-modal {
+            height: 100vh;
+            width: 100%;
+            font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 30px;
+            background-color: darkslategrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity .3s linear;
+            position: fixed;
+            top: 0;
+        }
+
+        .hide-modal {
+            display: none;
+            pointer-events: none;
+            user-select: none;
+            cursor: none;
+            transition: opacity .3s linear;
+
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            border-left: 50px;
+            border-radius: 5px;
+            background-color: #FAEBD7;
+            padding: 20px;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            font-size: 25px;
+            color: orangered;
+            padding: 5px;
+            font-weight: 600;
+            transition: font-size .2s linear;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #close-btn:hover {
+            transition: font-size .2s linear;
+            font-size: 30px;
+        }
+
+        #close-btn:active {
+            color: skyblue;
+        }
+
+        .contact-modal-open-btn {
+            position: fixed;
+            bottom: 0;
+            right: 5px;
+            padding: 0px 15px 0px 15px;
+            margin-bottom: 15px;
+            background-color: darkslategrey;
+            font-size: 12px;
+            cursor: pointer;
+            color: #fffffffb;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.24), -1px -1px 5px rgba(0, 0, 0, 0.24);
+        }
+
+        .contact-modal-open-btn:hover {
+            background-color: darkslategrey;
+        }
+
         #section {
             text-align: right;
             padding-right: 20px;
@@ -174,7 +298,8 @@
             <li>High numerical and analytical proficiency, with keen attention to details. </li>
             <li>Strong teamwork, negotiation and leadership qualities, coupled with proven<br>
                 excellence in oral and written communication</li>
-            <li>Great capacity to handle pressure sensibly and maintain poise in the face of demanding situations<br> while
+            <li>Great capacity to handle pressure sensibly and maintain poise in the face of demanding situations<br>
+                while
                 keeping focus on achieving desired results.</li>
         </ul>
 
@@ -202,9 +327,37 @@
     </div>
     </div>
 
+    <div class=contact-modal-open-btn>
+        <h3>Contact Me</h3>
+    </div>
+
+    <!--Contact Form-->
+    <div id="modal-with-form" class="contact-modal hide-modal">
+        <div class="container">
+            <form action="#" id="contact-form">
+                <span id="close-btn">&times;</span>
+
+                <label for="name">Name</label>
+                <input type="text" id="name" required autofocus minlength="4" placeholder="Enter your name..">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required placeholder="Enter your email here..">
+
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required placeholder="Message Title..">
+
+                <label for="message">Message</label>
+                <textarea id="message" minlength="20" required placeholder="Type your message here.."></textarea>
+
+                <input type="submit" id="contact-submission" value="Submit">
+            </form>
+
+        </div>
+    </div>
 
 
 
+    <script src="form.js"></script>
 </body>
 
 </html>
